@@ -53,7 +53,7 @@ export default function HowItWorks() {
             <div key={index} className="relative">
               {/* Connection line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-20 left-full w-full h-0.5 bg-gradient-to-r from-green-500 to-green-300 transform translate-x-4 z-0"></div>
+                <div className="hidden md:block absolute top-20 right-full w-full h-0.5 bg-gradient-to-l from-green-500 to-green-300 transform -translate-x-4 z-0"></div>
               )}
 
               <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">

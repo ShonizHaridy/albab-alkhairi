@@ -43,8 +43,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-green-800 via-green-700 to-green-900 pt-20">
-      {/* Background overlay */}
+<section id="home" className="hero-section relative min-h-screen bg-gradient-to-br from-green-800 via-green-700 to-green-900 pt-20">
+        {/* Background overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
       
       {/* Background pattern */}
