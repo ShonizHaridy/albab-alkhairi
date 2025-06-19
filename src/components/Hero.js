@@ -36,11 +36,57 @@ export default function Hero() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('تم إرسال طلبكم بنجاح! سيتم التواصل معكم قريباً');
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  // Validate form
+  if (!formData.name || !formData.phone || !formData.city || !formData.neighborhood) {
+    alert('يرجى ملء جميع الحقول المطلوبة');
+    return;
+  }
+
+  const hasSelectedType = Object.values(formData.requestType).some(value => value === true);
+  if (!hasSelectedType) {
+    alert('يرجى اختيار نوع واحد على الأقل من الطلبات');
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/requests', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert(result.message);
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        city: '',
+        neighborhood: '',
+        requestType: {
+          clothes: false,
+          shoes: false,
+          papers: false,
+          bags: false,
+          books: false,
+          furniture: false,
+        }
+      });
+    } else {
+      alert(result.message || 'حدث خطأ في إرسال الطلب');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('حدث خطأ في النظام. يرجى المحاولة مرة أخرى');
+  }
+};
 
   return (
 <section id="home" className="hero-section relative min-h-screen bg-gradient-to-br from-green-800 via-green-700 to-green-900 pt-20">
@@ -131,10 +177,10 @@ export default function Hero() {
                 >
                   <option value="">اختر المدينة</option>
                   <option value="riyadh">الرياض</option>
-                  <option value="jeddah">جدة</option>
+                  {/* <option value="jeddah">جدة</option>
                   <option value="dammam">الدمام</option>
                   <option value="mecca">مكة</option>
-                  <option value="medina">المدينة</option>
+                  <option value="medina">المدينة</option> */}
                 </select>
               </div>
 
@@ -181,7 +227,7 @@ export default function Hero() {
 
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
               >
                 إرسال الطلب
               </button>

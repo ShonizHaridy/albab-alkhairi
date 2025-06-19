@@ -89,8 +89,8 @@ export default function FAQ() {
                 فريق خدمة العملاء جاهز للإجابة على جميع استفساراتكم
               </p>
               <button 
-                onClick={() => document.getElementById('request').scrollIntoView({ behavior: 'smooth' })}
-                className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
+                onClick={() => window.open("https://wa.me/+966581396464", "_blank")}
+                className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors cursor-pointer"
               >
                 تواصل معنا
               </button>

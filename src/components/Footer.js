@@ -92,9 +92,9 @@ export default function Footer() {
 
         {/* Bottom section */}
         <div className="border-t border-gray-700 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-center md:text-right">
-              © 2024 الباب الخيري. جميع الحقوق محفوظة.
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <p className="text-gray-400 text-center">
+              © 2025 الباب الخيري. جميع الحقوق محفوظة.
             </p>
             {/* <div className="flex space-x-6 space-x-reverse mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">

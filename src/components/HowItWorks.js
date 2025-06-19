@@ -81,8 +81,8 @@ export default function HowItWorks() {
             <h3 className="text-2xl font-bold text-gray-800 mb-4">خدمة العملاء متاحة 24/7</h3>
             <p className="text-gray-600 mb-6">فريقنا جاهز لخدمتكم في أي وقت على مدار الساعة جميع أيام الأسبوع</p>
             <button
-              onClick={() => document.getElementById("request")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              onClick={() => window.open("https://wa.me/+966581396464", "_blank")}
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
             >
               ابدأ الآن
             </button>

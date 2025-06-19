@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import logo from '../images/logo_transparent.png'; // Adjust the path as necessary
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -6,10 +9,14 @@ export default function About() {
           {/* Right side - Content */}
           <div className="text-center lg:text-right order-2 lg:order-1">
             <div className="flex justify-center lg:justify-end mb-6">
-              <div className="bg-green-100 p-6 rounded-full">
-                <svg className="w-20 h-20 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-                </svg>
+              <div className="p-6">
+              <Image
+                src={logo}
+                alt="الباب الخيري"
+                width={96}
+                height={96}
+                className="rounded-lg flex-shrink-0"
+              />
               </div>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">

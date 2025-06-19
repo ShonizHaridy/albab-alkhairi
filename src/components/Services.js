@@ -1,25 +1,37 @@
+import Image from 'next/image';
+import clothes from '../images/clothes.jpeg'; 
+import shoes from '../images/shoes.jpg'; 
+import furniture from '../images/furniture.jpg'
+
 export default function Services() {
   const services = [
     {
       title: "ملابس",
       description: "جمع الملابس المستعملة بجميع حالاتها وأنواعها",
       icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
-          <path fillRule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clipRule="evenodd" />
-        </svg>
+              <Image
+                src={clothes}
+                alt="الباب الخيري"
+                width={96}
+                height={96}
+                className="rounded-lg flex-shrink-0 object-cover"
+              />
       ),
-      color: "from-blue-500 to-blue-600"
+      color: ""
     },
     {
       title: "أحذية",
       description: "أحذية مستعملة من جميع الأنواع والأحجام",
       icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm5.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L10.586 10 8.293 7.707a1 1 0 010-1.414z" clipRule="evenodd" />
-        </svg>
+              <Image
+                src={shoes}
+                alt="الباب الخيري"
+                width={96}
+                height={96}
+                className="rounded-lg flex-shrink-0 object-cover"
+              />
       ),
-      color: "from-green-500 to-green-600"
+      color: ""
     },
     {
       title: "أوراق",
@@ -55,11 +67,15 @@ export default function Services() {
       title: "أثاث",
       description: "قطع أثاث منزلي ومكتبي مستعمل",
       icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
-        </svg>
+              <Image
+                src={furniture}
+                alt="الباب الخيري"
+                width={96}
+                height={96}
+                className="rounded-lg flex-shrink-0 object-cover"
+              />
       ),
-      color: "from-indigo-500 to-indigo-600"
+      color: ""
     }
   ];
 

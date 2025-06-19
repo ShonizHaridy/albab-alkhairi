@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import logo from '../images/gameia_tanmia_ahlia_logo.png'; // Adjust path based on component location
 
@@ -80,7 +82,10 @@ export default function Partners() {
               <p className="text-gray-600 mb-6">
                 نرحب بالشراكة مع الجمعيات الخيرية المعتمدة لتوسيع نطاق خدماتنا
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+              <button 
+                onClick={() => window.open("https://wa.me/+966581396464", "_blank")}
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors cursor-pointer"
+              >
                 تواصل معنا للشراكة
               </button>
             </div>
